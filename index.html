@@ -7,36 +7,34 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id = "main-page" >
-        <nav class = "nav-logo">
-            <img src="Logo.png" alt="LOL logo">
-        </nav>
-      <h1>Help you find your new  main?</h1>
-        <p>Answer a few questions and let us match you to your next champion</p>
-        <p>Click start when you are ready </p>
-        <button id = "start-button">Start</button>
-
+    <nav class="nav-logo">
+        <img id="logo" src="Logo.png" alt="LOL logo">
+    </nav>
+    <div id="main-page">
+        <div class="left">
+            <h1>Help you find your new main?</h1>
+            <p>Answer a few questions and let us match you to your next champion</p>
+            <p>Click start when you are ready</p>
+            <button id="start-button">Start</button>
+        </div>
+       <!--<img class ="hero-image-2" src="img2.png" > -->
         <div class="hero-image">
-            <img src="Hero-page-1.png" alt= "Image of nunu ">
+         <img src="nilah_by_uhmtaongon_df7ukwo.png" alt="Image of nunu">
         </div>
     </div>
-<div id = "quiz-page" style ="display:none;">
-    <h2>Quiz Questions</h2>
- <form id="quizForm">
-    <!--Display the questions and choices here-->
- </form>
-  <button id = "submit-button">Submit</button>
-</div>
-
-
-<div id = "quiz-page" style ="display:none;">
-    <h2>We have found you a match !</h2>
-    <div class="champion-display">
-        <!--Fetch champion's data and display here -->
+    <div id="quiz-page" style="display: none;">
+        <h2>Quiz Questions</h2>
+        <form id="quizForm">
+            <!-- Display the questions and choices here -->
+        </form>
+        <button id="submit-button">Submit</button>
     </div>
-</div>
-
-
+    <div id="results-page" style="display: none;">
+        <h2>We have found you a match!</h2>
+        <div class="champion-display">
+            <!-- Fetch champion's data and display here -->
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>

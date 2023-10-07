@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Belleza&display=swap');
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body{
+    margin:0;
+    padding:0;
+    background-size: cover;
+    background-image: linear-gradient(to right, #141e30, #243b55);
+
+    line-height: 1.5;
+    color:#edeced;
+  }
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    font-family: 'Belleza', sans-serif;
+  }
+  p{
+    font-family: 'Amatic SC', cursive;
+            
+
+    
+  }
+  img {
+    border-style: none;
+  }
+  button {
+  font-family: inherit; 
+  font-size: 100%; 
+  line-height: 1.15; 
+  margin: 0; 
+}
+
+#logo{
+    width:7%;
+}
+nav{
+    display:flex;
+    justify-content: flex-start;
+}
+#main-page{
+    display:grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    grid-template-areas: "left hero-image";
+
+}
+.left{
+    grid-area:left;
+  margin-left:2em;
+}
+.hero-image{
+    grid-area: hero-image;
+}
+.hero-image img{
+    width:90%;
+ 
+
+
+
+}
+.hero-image-2{
+   
+    width:60%;
+}
+button{
+    background-color: whitesmoke;
+    padding:2em;
+    border-radius: 10px;;
+}
