@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOL Champ select</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id = "main-page" >
+        <nav class = "nav-logo">
+            <img src="Logo.png" alt="LOL logo">
+        </nav>
+      <h1>Help you find your new  main?</h1>
+        <p>Answer a few questions and let us match you to your next champion</p>
+        <p>Click start when you are ready </p>
+        <button id = "start-button">Start</button>
+
+        <div class="hero-image">
+            <img src="Hero-page-1.png" alt= "Image of nunu ">
+        </div>
+    </div>
+<div id = "quiz-page" style ="display:none;">
+    <h2>Quiz Questions</h2>
+ <form id="quizForm">
+    <!--Display the questions and choices here-->
+ </form>
+  <button id = "submit-button">Submit</button>
+</div>
+
+
+<div id = "quiz-page" style ="display:none;">
+    <h2>We have found you a match !</h2>
+    <div class="champion-display">
+        <!--Fetch champion's data and display here -->
+    </div>
+</div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
