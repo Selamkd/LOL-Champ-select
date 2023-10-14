@@ -25,17 +25,31 @@
     </div>
           <!--Second page-->
     <div id="quiz-page" style="display: none;">
-        <h2>Quiz Questions</h2>
+       
         <form id="quizForm">
+            <h1>Quiz Questions</h1>
             <!-- Display the questions and choices here -->
+            <h2 id ="question"> Question goes here</h2>
+            <div id = "choice-buttons">
+                <button class = "choice-btn">A</button>
+                <button class = "choice-btn">B</button>
+                <button class = "choice-btn">C</button>
+                <button class = "choice-btn">D</button>
+                <button class = "choice-btn">E</button>
+                <button class = "choice-btn">F</button>
+
+            </div>
+            <button id="submit-button">Submit</button>
         </form>
-        <button id="submit-button">Submit</button>
+   
     </div>
          <!--Third page -->
     <div id="results-page" style="display: none;">
         <h2>We have found you a match!</h2>
         <div class="champion-display">
             <!-- Fetch champion's data and display here -->
+
+       <button id="startover-button">Go back</button> 
         </div>
     </div>
     <script src="main.js"></script>
