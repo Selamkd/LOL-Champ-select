@@ -1,57 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOL Champ select</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <nav class="nav-logo">
-        <img id="logo" src="Logo.png" alt="LOL logo">
+      <img id="logo" src="Logo.png" alt="LOL logo" />
     </nav>
-           <!--First page-->
+    <!--First page-->
     <div id="main-page">
-        <div class="left">
-            <h1>Help you find your new main?</h1>
-            <p>Answer a few questions and let us match you to your next champion</p>
-            <p>Click start when you are ready</p>
-            <button id="start-button">Start</button>
-        </div>
-  
-        <div class="hero-image">
+      <div class="left">
+        <h1>Help you find your new main?</h1>
+        <p>Answer a few questions and let us match you to your next champion</p>
+        <p>Click start when you are ready</p>
+        <button id="start-button" type="button">Start</button>
+      </div>
 
-        </div>
+      <div class="hero-image"></div>
     </div>
-          <!--Second page-->
-    <div id="quiz-page" style="display: none;">
-       
-        <form id="quizForm">
-            <h1>Quiz Questions</h1>
-            <!-- Display the questions and choices here -->
-            <h2 id ="question"> Question goes here</h2>
-            <div id = "choice-buttons">
-                <button class = "choice-btn">A</button>
-                <button class = "choice-btn">B</button>
-                <button class = "choice-btn">C</button>
-                <button class = "choice-btn">D</button>
-                <button class = "choice-btn">E</button>
-                <button class = "choice-btn">F</button>
-
-            </div>
-            <button id="submit-button">Submit</button>
-        </form>
-   
+    <!--Second page-->
+    <div id="quiz-page" style="display: none">
+      <h1>Quiz Questions</h1>
+      <h2 id="question">Question goes here</h2>
+      <div id="choice-buttons">
+        <button class="choice-btn" type="button">A</button>
+        <button class="choice-btn" type="button">B</button>
+        <button class="choice-btn" type="button">C</button>
+        <button class="choice-btn" type="button">D</button>
+        <button class="choice-btn" type="button">E</button>
+      </div>
+      <button id="submit-button">Submit</button>
     </div>
-         <!--Third page -->
-    <div id="results-page" style="display: none;">
-        <h2>We have found you a match!</h2>
-        <div class="champion-display">
-            <!-- Fetch champion's data and display here -->
-
-       <button id="startover-button">Go back</button> 
-        </div>
+    <!--Third page -->
+    <div id="results-page" style="display: none" ;>
+      <h2>We have found you a match!</h2>
+      <div class="champion-display">
+        <!-- Fetch champion's data and display here -->
+      </div>
     </div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
