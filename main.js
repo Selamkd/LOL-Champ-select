@@ -48,7 +48,7 @@ const questionsAndChoices = [
   {
     question:
       'Do you prefer to keep enemies at range or get up close and personal ?',
-    choices: [{ text: 'At range' }, { text: 'Close' }],
+    choices: [{ text: 'At range' }, { text: 'Melee' }],
   },
 ];
 startButton.addEventListener('click', () => {
@@ -93,7 +93,7 @@ function choiceSelected(event) {
   const selectedChoice = event.target.textContent;
 
   //check if there are more questions and move to the next one
-  if (currentQuestionIndex < questionsAndChoices.length) {
+  if (currentQuestionIndex < questionsAndChoices.length - 1) {
     currentQuestionIndex++;
     runQuiz();
     userResponse.push(selectedChoice);
