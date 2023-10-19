@@ -42,31 +42,38 @@ nav {
   justify-content: flex-start;
 }
 #main-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* #main-page {
   display: grid;
   grid-template-columns: 0.7fr 1.3fr;
-  grid-template-areas: 'left hero-image';
-}
-.left {
+  grid-template-areas: 'left ';
+  gap: 2em;
+} */
+/* .left {
   grid-area: left;
   margin-left: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.hero-image {
-  grid-area: hero-image;
+} */
+/* .right-img {
+  grid-area: right-img;
   height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 50%;
-}
-.hero-image img {
+  display: flex;
+} */
+.right-img img {
   width: 90%;
+
+  padding: 2em;
+  margin-bottom: 6em;
 }
-.hero-image-2 {
-  width: 60%;
-}
+
 button {
   background-color: #c1ff72;
   border-radius: 20px;
@@ -97,7 +104,8 @@ button:hover {
   border-bottom: 1px solid #333;
   padding-bottom: 1em;
   text-align: center;
-  color: #222;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 2em;
 }
 #quiz-page h2 {
   color: #414187;
