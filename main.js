@@ -32,9 +32,9 @@ const questionsAndChoices = [
       { text: 'Shurima' },
       { text: 'Noxus' },
       { text: 'Zaun' },
-      { text: 'Targan' },
+      { text: 'Targon' },
       { text: 'Bandle city' },
-      { text: 'Ionia' },
+      { text: 'Ionian Ocean' },
     ],
   },
   {
@@ -42,8 +42,9 @@ const questionsAndChoices = [
     choices: [
       { text: 'Top' },
       { text: 'Jungle' },
-      { text: 'Mid' },
+      { text: 'Middle' },
       { text: 'Botlane' },
+      { text: 'Support' },
     ],
   },
   {
@@ -93,6 +94,7 @@ function runQuiz() {
 function choiceSelected(event) {
   const selectedChoice = event.target.textContent;
   userResponse.push(selectedChoice);
+
   //check if there are more questions and move to the next one
   if (currentQuestionIndex < questionsAndChoices.length - 1) {
     currentQuestionIndex++;
@@ -102,6 +104,7 @@ function choiceSelected(event) {
     // quizPage.style.display = 'none';
     // resultPage.style.display = 'block';
   }
+  console.log(userResponse);
 }
 
 async function processUserResponse() {
@@ -116,41 +119,32 @@ async function processUserResponse() {
   }
 
   const champData = await response.json();
+  console.log(champData);
 
-  let selectedChampion = null;
+  // write a function to calculate the similarity score between a champion's values and user's response
+  function calculateSimilarity(champ, userResponse) {
+    // assign a score to each property
+    const score =
+      (champ.playStyle === userResponse[0] ? 1 : 0) +
+      (champ.difficulty === userResponse[1] ? 1 : 0) +
+      (champ.region === userResponse[2] ? 1 : 0) +
+      (champ.role === userResponse[3] ? 1 : 0) +
+      (champ.range === userResponse[4] ? 1 : 0);
+    return score;
+  }
+  // calculate similarity scores for all chapions
+  const championsScored = champData.map((champ) => {
+    return {
+      champion: champ,
+      score: calculateSimilarity(champ, userResponse),
+    };
+  });
+  // sort champions by their score/ descending
+  championsScored.sort((a, b) => b.score - a.score);
 
-  // Outer loop loops through each element in userResponse
-  for (let i = 0; i < userResponse.length; i++) {
-    let matchingScore = 0;
-    let highestMatchingScore = 0;
-    userChoice = userResponse[i];
-    console.log(userChoice);
-    // Inner loop through the champions object
-    for (let j = 0; j < champData.length; j++) {
-      //loop through champion data and return a champion
-      const champion = champData[j];
-      console.log(champData);
-      //loop through champio
-      for (const value of Object.values(champion)) {
-        if (value == userChoice) {
-          matchingScore++;
-          console.log(matchingScore);
-          if (matchingScore === 5) {
-            selectedChampion = champion;
-            matchingScore = highestMatchingScore;
-            break;
-          }
-        }
-      }
-      if (selectedChampion) {
-        break;
-      }
-    }
-  }
-  if (selectedChampion) {
-    console.log(userResponse);
-    console.log(`Selected champion is: ${selectedChampion.championName}`);
-    console.log(selectedChampion);
-  }
+  // save the champion with the highest score in a variable
+  const highestScore = championsScored[0];
+
+  console.log('The closest match is:', highestScore);
 }
 submitButton.addEventListener('click', processUserResponse);

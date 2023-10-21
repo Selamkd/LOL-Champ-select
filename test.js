@@ -169,3 +169,73 @@ for (const value of Object.values(champion)) {
     break;
   }
 }
+
+const result = champData.filter((item) => {
+  return (
+    item.name.toLowerCase().includes(userChoice) || // Compare with name
+    item.age.toString().includes(userInput) // Compare with age
+  );
+});
+
+if (result.length > 0) {
+  // Display matching results
+  console.log('Matching results:', result);
+} else {
+  // No matching results
+  console.log('No matching results.');
+}
+async function processUserResponse() {
+  const response = await fetch(
+    'https://champ-select-a6f686d9438e.herokuapp.com/'
+  );
+  if (!response.ok) {
+    console.error(`Status: ${response.status}`);
+    console.error(`Text: ${await response.text()}`);
+    console.error('Data not available');
+    return;
+  }
+
+  const champData = await response.json();
+  console.log(champData);
+
+  let selectedChampion = null;
+
+  // // Outer loop loops through each element in userResponse
+  // for (let i = 0; i < userResponse.length; i++) {
+  //   let matchingScore = 0;
+  //   let highestMatchingScore = 0;
+  //   userChoice = userResponse[i];
+  //   console.log(userChoice);
+  //   // Inner loop through the champions object
+  //   for (let j = 0; j < champData.length; j++) {
+  //     //loop through champion data and return a champion
+  //     const champion = champData[j];
+  //     console.log(champion);
+  //     console.log(champData);
+  //     //loop through champion data
+  //     for (const value of Object.values(champion)) {
+  //       if (value == userChoice) {
+  //         matchingScore++;
+  //         // replace matching score and push to a new array/ object
+  //         console.log(matchingScore);
+  //         // add a logic
+  //         if (matchingScore === 5) {
+  //           selectedChampion = champion;
+  //           matchingScore = highestMatchingScore;
+  //           break;
+  //         }
+  //       }
+  //     }
+  //     if (selectedChampion) {
+  //       break;
+  //     }
+  //   }
+  // }
+  // if (selectedChampion) {
+  //   console.log(userResponse);
+  //   console.log(`Selected champion is: ${selectedChampion.championName}`);
+  //   console.log(selectedChampion);
+  // }
+
+  // submitButton.addEventListener('click', processUserResponse);
+}
