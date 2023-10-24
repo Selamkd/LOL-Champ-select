@@ -130,21 +130,22 @@ async function processUserResponse() {
       (champ.region === userResponse[2] ? 1 : 0) +
       (champ.role === userResponse[3] ? 1 : 0) +
       (champ.range === userResponse[4] ? 1 : 0);
+    console.log(score);
     return score;
   }
-  // calculate similarity scores for all chapions
+  // calculate the score for each champion
   const championsScored = champData.map((champ) => {
     return {
       champion: champ,
       score: calculateSimilarity(champ, userResponse),
     };
   });
-  // sort champions by their score/ descending
+  console.log(championsScored);
+  // sort champions by their score.. descending
   championsScored.sort((a, b) => b.score - a.score);
 
-  // save the champion with the highest score in a variable
-  const highestScore = championsScored[0];
-
-  console.log('The closest match is:', highestScore);
+  // return champion with the highest score in a variable
+  const highScoreChamp = championsScored[0];
+  console.log('The closest match is:', highScoreChamp);
 }
 submitButton.addEventListener('click', processUserResponse);
