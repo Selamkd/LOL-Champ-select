@@ -26,7 +26,7 @@ h1 {
 }
 p {
   font-family: 'Signika', sans-serif;
-  color: white;
+  color: #f4f2ee;
 }
 img {
   border-style: none;
@@ -47,34 +47,42 @@ nav {
   justify-content: flex-start;
 }
 #main-page {
-  display: grid;
-  grid-template-rows: 1.5fr 0.5 0.5fr;
-
+  display: flex;
+  flex-direction: column;
+  align-content: space-evenly;
   height: 100vh;
   padding: 1em;
 }
 .hero {
   grid-area: hero;
 }
-
-button {
-  background-color: #84f480;
-  border-radius: 20px;
-  border: 5px solid #24233e;
-  margin-top: 0;
-  width: 200px;
-  text-align: center;
-  transition-duration: 0.4s;
-  text-decoration: none;
-  overflow: hidden;
-  font-family: Gagalin, sans-serif;
+.text {
+  padding: 0.5em;
+  margin-top: 0.5em;
+}
+.start-button {
+  line-height: 40px;
+  width: 10em;
+  padding: 0;
+  border-radius: 175px;
+  background: rgb(112, 204, 124);
+  border: #84f480 2px solid;
+  box-shadow: 0 0 5px #84f480, 0 0 5px #84f480 inset;
+  color: #fff;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  font-family: Gagalin, 'Inter', sans-serif;
   margin: 1.25em auto 0;
+  animation: slide 2s infinite;
 }
-button:hover {
-  background: #fff;
-  box-shadow: 0px 2px 10px 5px #97b1bf;
-  color: #000;
+.start-button:hover {
+  background: #f4f2ee;
+  transform: scale(1.05);
+  border: none;
+  color: #272030;
+  box-shadow: 0 0 5px #fff, 0 0 5px #ffff inset;
 }
+
 #quiz-page {
   background: #fff;
   width: 80%;
@@ -114,4 +122,12 @@ button:hover {
   display: block;
   align-self: center;
   margin: 1.25em auto 0;
+}
+@keyframes slide {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: translateY(360deg);
+  }
 }

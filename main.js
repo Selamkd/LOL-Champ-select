@@ -5,8 +5,12 @@ const resultPage = document.getElementById('results-page');
 const startButton = document.getElementById('start-button');
 const submitButton = document.getElementById('submit-button');
 const displayQuestion = document.getElementById('question');
+const heroImg = document.getElementById('hero-img');
+console.log(heroImg);
 
 const choiceButtons = document.getElementById('choice-buttons');
+
+setTimeout(() => {}, 1000);
 
 let currentQuestionIndex = 0;
 let userResponse = [];
@@ -53,6 +57,7 @@ const questionsAndChoices = [
     choices: [{ text: 'Ranged' }, { text: 'Melee' }],
   },
 ];
+
 startButton.addEventListener('click', () => {
   // Hide the Start Page
   startPage.style.display = 'none';
