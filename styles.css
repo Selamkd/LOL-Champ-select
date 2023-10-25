@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Signika:wght@300;400&display=swap')
-  *,
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Bebas+Neue&family=Luckiest+Guy&family=Orbitron&family=Signika:wght@300;400&family=Ubuntu:wght@300;400&display=swap');
+*,
   *: : before, *: : after {
   box-sizing: border-box;
+  background: #272030;
 }
 @font-face {
   font-family: Gagalin;
@@ -16,18 +17,24 @@ body {
 body img {
   width: 100%;
 }
-h1 {
+.main-h1 {
   font-size: 2em;
   margin: 0.67em 0;
   font-family: Gagalin, 'Inter', sans-serif;
   font-weight: bold;
-  color: white;
+  /* -webkit-text-stroke: 2px rgba(50, 205, 50, 0.1); */
+  text-shadow: 2px 2px #272030;
   text-align: center;
   margin-top: 0;
+  line-height: 1;
+  color: #f1ebe5;
 }
 p {
-  font-family: 'Signika', sans-serif;
-  color: #f4f2ee;
+  font-family: 'Ubuntu', sans-serif;
+  color: thistle;
+  opacity: 0.6;
+
+  margin-top: 1em;
 }
 img {
   border-style: none;
@@ -74,11 +81,11 @@ nav {
   perspective: 300px;
   font-family: Gagalin, 'Inter', sans-serif;
   margin: 1.25em auto 0;
-  animation: slide 2s infinite;
+  animation: wobble 2s ease;
 }
 .start-button:hover {
   background: #f4f2ee;
-  transform: scale(1.05);
+
   border: none;
   color: #272030;
   box-shadow: 0 0 5px #fff, 0 0 5px #ffff inset;
@@ -86,24 +93,32 @@ nav {
 
 #quiz-page {
   background: #fff;
-  width: 80%;
-  max-width: 600px;
+  width: 60%;
+  max-width: 400px;
   margin: 100px auto 0;
   border-radius: 10px;
-  padding: 30px;
-  border: #84f480 2px solid;
+  padding: 4em;
+  border: rgb(112, 204, 124) 2px solid;
 }
-#quiz-page h1 {
+.quiz-h1 {
   border-bottom: 1px solid #333;
   padding-bottom: 1em;
   text-align: center;
-  color: rgba(0, 0, 0, 0.5);
+  color: #272030;
+  opacity: 0.5;
+  color: #414187;
+  /* color: rgba(0, 0, 0, 0.5); */
   font-size: 2em;
+  font-family: 'Luckiest guy';
 }
 #quiz-page h2 {
-  color: #414187;
+  color: #272030;
+  font-size: 1.2em;
+  font-family: 'Signika', sans-serif;
 }
-
+#quiz-page img {
+  width: 90%;
+}
 .choice-btn {
   background: #fff;
   width: 100%;
@@ -114,6 +129,9 @@ nav {
   border-radius: 4px;
   cursor: pointer;
   text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+
+  padding-bottom: 0.5em !important;
 }
 .choice-btn:hover {
   background: #414187;
@@ -123,12 +141,40 @@ nav {
   display: block;
   align-self: center;
   margin: 1.25em auto 0;
+  line-height: 40px;
+  width: 10em;
+  padding: 0;
+  border-radius: 175px;
+  background: rgb(112, 204, 124);
+  border: #272030 1px solid;
+  box-shadow: 0 0 5px #84f480, 0 0 5px #84f480 inset;
+  color: #fff;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  font-family: Gagalin, 'Inter', sans-serif;
+  margin: 1.25em auto 0;
 }
-@keyframes slide {
+
+@keyframes wobble {
   0% {
-    transform: rotate(0deg);
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-5%) rotate(-1deg);
   }
   100% {
-    transform: translateY(360deg);
+    transform: translateX(0%);
   }
 }

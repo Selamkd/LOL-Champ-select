@@ -239,3 +239,49 @@ async function processUserResponse() {
 
   // submitButton.addEventListener('click', processUserResponse);
 }
+import * as bottlesModel from './bottles/model.js';
+
+export async function getAllBottles(req, res) {
+  const bottles = await bottlesModel.getAllBottles();
+
+  res.status(200).json({
+    success: true,
+    payload: messages,
+  });
+}
+export async function createBottle(req, res) {
+  const inputUndefined =
+    req.body.messages === undefined || req.body.timestamp === undefined;
+
+  if (inputUndefined) {
+    res.status(400).json({
+      success: false,
+      error: "Please provide a 'message' and 'timestamp",
+    });
+    return;
+  }
+
+  const createdBottle = await bottlesModel.createBottle({
+    message: req.body.message,
+  });
+  res.status(201).json({
+    success: true,
+    payload: createdBottle,
+  });
+}
+
+export async function deleteBottleById(req, res) {
+  const bottleId = req.params.id;
+  const deleted = await bottlesModel.deleteBottleById(bottleId);
+  if (!deleted) {
+    res.status(404).json({
+      success: false,
+      error: `No message with the id ${bottleId} found`,
+    });
+    return;
+  }
+  res.status(200).json({
+    success: true,
+    payload: deleted,
+  });
+}

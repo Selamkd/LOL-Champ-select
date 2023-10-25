@@ -78,7 +78,8 @@ function runQuiz() {
   let questionNumber = currentQuestionIndex + 1;
 
   //display question inside the 'question' h2 element
-  displayQuestion.innerHTML = questionNumber + '.  ' + currentQuestion.question;
+  displayQuestion.innerHTML =
+    questionNumber + '.   ' + currentQuestion.question;
 
   //set the choice buttons to empty to start with
   choiceButtons.innerHTML = '';
