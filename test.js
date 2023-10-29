@@ -285,3 +285,41 @@ export async function deleteBottleById(req, res) {
     payload: deleted,
   });
 }
+//Fetch champion icons from the second API
+const championResponse = await fetch(
+  'http://ddragon.leagueoflegends.com/cdn/9.13.1/data/en_US/champion.json'
+);
+if (!championResponse.ok) {
+  console.error(`Status: ${championResponse.status}`);
+  console.error(`Text: ${await championResponse.text()}`);
+  console.error('Icon data not available');
+  return;
+}
+const champIcon = await championResponse.json();
+const iconImage = document.createElement('img');
+
+//get selected champion
+const selectedChampion = highScoreChamp.champion;
+const championName = selectedChampion.championName;
+console.log(championName);
+// match the champion name to get the matching champion icon
+const champIconImg = champIcon.data[championName].image.full;
+console.log(champIconImg);
+const iconURL = `http://ddragon.leagueoflegends.com/cdn/9.13.1/img/champion/${champIconImg}`;
+console.log(iconURL);
+iconImage.src = iconURL;
+champImage.appendChild(iconImage);
+//create img element for the champion icon
+// const iconImage = document.createElement('img');
+// if (selectedChampion) {
+//   // const iconId = champIcon.data[selectedChampion.id].id;
+
+//   const iconURL = `http://ddragon.leagueoflegends.com/cdn/13.21.1/img/profileicon/${iconId}.png`;
+//   iconImage.src = iconURL;
+//   champImage.appendChild(iconImage);
+
+//   champName.textContent = `Champion Name: ${highScoreChamp.championName}`;
+//   champUltimate.textContent = `Ultimate ability: ${highScoreChamp.ulitimateAbility}`;
+// } else {
+//   console.error('selectedChampion is undefined or does not exist.');
+// }

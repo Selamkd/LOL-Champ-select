@@ -5,12 +5,28 @@ const resultPage = document.getElementById('results-page');
 const startButton = document.getElementById('start-button');
 const submitButton = document.getElementById('submit-button');
 const displayQuestion = document.getElementById('question');
-const heroImg = document.getElementById('hero-img');
-console.log(heroImg);
+const champName = document.getElementById('champ-name');
+const champAbilities = document.getElementById('abilities');
+const champUltimate = document.getElementById('ultimate');
+const champRegion = document.getElementById('region');
+const champLore = document.getElementById('lore');
+const champImage = document.getElementById('champ-img');
+const heroCard = document.querySelector('.card');
+const cardBack = document.querySelector('.card-back');
 
 const choiceButtons = document.getElementById('choice-buttons');
 
-setTimeout(() => {}, 1000);
+setTimeout(() => {
+  heroCard.style.display = 'none';
+  cardBack.style.display = 'block';
+}, 6000);
+
+// heroCard.addEventListener('mouseover', (event) => {
+//   let xAxis = (window.innerWidth / 2 - event.pageX) / 10;
+//   let yAxis = (window.innerHeight / 2 - event.pageY) / 10;
+
+//   heroCard.style.transform = `rotateY(${yAxis}deg) rotateX(${xAxis}deg)`;
+// });
 
 let currentQuestionIndex = 0;
 let userResponse = [];
@@ -38,7 +54,8 @@ const questionsAndChoices = [
       { text: 'Zaun' },
       { text: 'Targon' },
       { text: 'Bandle city' },
-      { text: 'Ionian Ocean' },
+      { text: 'Ionia' },
+      { text: 'Demacia' },
     ],
   },
   {
@@ -114,9 +131,8 @@ function choiceSelected(event) {
 }
 
 async function processUserResponse() {
-  const response = await fetch(
-    'https://champ-select-a6f686d9438e.herokuapp.com/'
-  );
+  // Fetch champion data from the first API
+  const response = await fetch('http://localhost:4000/champions/');
   if (!response.ok) {
     console.error(`Status: ${response.status}`);
     console.error(`Text: ${await response.text()}`);
@@ -127,9 +143,9 @@ async function processUserResponse() {
   const champData = await response.json();
   console.log(champData);
 
-  // write a function to calculate the similarity score between a champion's values and user's response
+  // Write a function to calculate the similarity score between a champion's values and user's response
   function calculateSimilarity(champ, userResponse) {
-    // assign a score to each property
+    // Assign a score to each property
     const score =
       (champ.playStyle === userResponse[0] ? 1 : 0) +
       (champ.difficulty === userResponse[1] ? 1 : 0) +
@@ -139,7 +155,8 @@ async function processUserResponse() {
     console.log(score);
     return score;
   }
-  // calculate the score for each champion
+
+  // Calculate the score for each champion
   const championsScored = champData.map((champ) => {
     return {
       champion: champ,
@@ -147,11 +164,53 @@ async function processUserResponse() {
     };
   });
   console.log(championsScored);
-  // sort champions by their score.. descending
+
+  // Sort champions by their score in descending order
   championsScored.sort((a, b) => b.score - a.score);
 
-  // return champion with the highest score in a variable
+  // Return the champion with the highest score in a variable
   const highScoreChamp = championsScored[0];
   console.log('The closest match is:', highScoreChamp);
+  quizPage.style.display = 'none';
+  resultPage.style.display = 'block';
+
+  // img icon for each champion
+  const championIcon = {
+    'Ahri': '/Champ-icons/ahri.png',
+    'Amumu': '/Champ-icons/amumu.png',
+    'Ashe': '/Champ-icons/ashe.png',
+    'Aurelion Sol': '/Champ-icons/Aurelion sol.jpeg',
+    'Bard': '/Champ-icons/bard.png',
+    'Blitzcrank': '/Champ-icons/blitzcrank.png',
+    'Briar': '/Champ-icons/briar.png',
+    'Darius': '/Champ-icons/darius.png',
+    'Ezreal': '/Champ-icons/ezreal.jpeg',
+    'Graves': '/Champ-icons/graves.png',
+    'Kennen': '/Champ-icons/kennen.png',
+    'Malzahar': '/Champ-icons/malzahar.webp',
+    'Nami': '/Champ-icons/nami.png',
+    'Nasus': '/Champ-icons/nasus.png',
+    'Olad': '/Champ-icons/olaf.png',
+    'Orianna': '/Champ-icons/orianna.jpeg',
+    'Pantheon': '/Champ-icons/pantheon.png',
+    'Pyke': '/Champ-icons/pyke.webp',
+    'Rammus': '/Champ-icons/rammus.webp',
+    'Rell': '/Champ-icons/rell.jpeg',
+    'Rakan': '/Champ-icons/rakan.jpeg',
+    'Shyvana': '/Champ-icons/shyvana.webp',
+    'Sylas': '/Champ-icons/sylas.webp',
+    'Teemo': '/Champ-icons/Teemo.jpeg',
+    'Vayne': '/Champ-icons/vayne.webp',
+    'Yuumi': '/Champ-icons/Yuumi.jpeg',
+  };
+  const selectedChampion = highScoreChamp.champion.championName;
+  const matchingIcon = championIcon[selectedChampion];
+  console.log(matchingIcon);
+  if (matchingIcon) {
+    champImage.src = matchingIcon;
+  } else {
+    console.error('Image not found for the selected champion.');
+  }
 }
+
 submitButton.addEventListener('click', processUserResponse);

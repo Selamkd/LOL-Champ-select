@@ -2,20 +2,23 @@
 *,
   *: : before, *: : after {
   box-sizing: border-box;
-  background: #272030;
 }
-@font-face {
-  font-family: Gagalin;
-  src: url('/Gagalin/Commercial/OTF/Gagalin-Regular.otf');
-}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #272030;
+  background: url('league-b.webp');
+  background-position: cover;
+  background-repeat: no-repeat;
   line-height: 1.5;
 }
 body img {
   width: 100%;
+}
+.card {
+  border: 2px solid #d0a85c;
+  background: url('card background.jpeg');
+  background-repeat: no repeat;
 }
 .main-h1 {
   font-size: 2em;
@@ -28,7 +31,11 @@ body img {
   margin-top: 0;
   line-height: 1;
   color: #f1ebe5;
+  opacity: 0; /* Initially hidden */
+  transform: scale(0.5); /* Initially smaller size */
+  animation: fadeInAndGrow 1s ease-in-out forwards;
 }
+
 p {
   font-family: 'Ubuntu', sans-serif;
   color: thistle;
@@ -45,6 +52,11 @@ button {
   line-height: 1.15;
   margin: 0;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
 }
 
 #logo {
@@ -58,8 +70,20 @@ nav {
   display: flex;
   flex-direction: column;
   align-content: space-evenly;
-  height: 100vh;
+  gap: 1em;
+
   padding: 1em;
+}
+@media (min-width: 450px) and (max-width: 890px) {
+  body {
+    background-color: pink;
+  }
+}
+@media (min-width: 900px) {
+  #main-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .hero {
   grid-area: hero;
@@ -90,15 +114,22 @@ nav {
   color: #272030;
   box-shadow: 0 0 5px #fff, 0 0 5px #ffff inset;
 }
-
 #quiz-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  height: 100vh;
+}
+.quiz-container {
   background: #fff;
-  width: 60%;
-  max-width: 400px;
-  margin: 80px auto 0;
+  align-self: center;
   border-radius: 10px;
   padding: 4em;
-  border: rgb(112, 204, 124) 2px solid;
+  border: 2px solid rgb(112, 204, 124);
+  margin-top: 5em;
+  width: 60%;
+  margin-left: 0.7em;
 }
 .quiz-h1 {
   border-bottom: 1px solid #333;
@@ -176,5 +207,15 @@ nav {
   }
   100% {
     transform: translateX(0%);
+  }
+}
+@keyframes fadeInAndGrow {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
