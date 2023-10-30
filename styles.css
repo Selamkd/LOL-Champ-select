@@ -117,13 +117,14 @@ nav {
 #quiz-page {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
-  height: 100vh;
+  align-content: space-evenly;
+  gap: 1em;
+
+  padding: 1em;
 }
+
 .quiz-container {
   background: #fff;
-  align-self: center;
   border-radius: 10px;
   padding: 4em;
   border: 2px solid rgb(112, 204, 124);
@@ -131,25 +132,22 @@ nav {
   width: 60%;
   margin-left: 0.7em;
 }
+
 .quiz-h1 {
   border-bottom: 1px solid #333;
   padding-bottom: 1em;
   text-align: center;
-  color: #272030;
-  opacity: 0.5;
   color: #414187;
-  /* color: rgba(0, 0, 0, 0.5); */
   font-size: 2em;
   font-family: 'Luckiest guy';
 }
+
 #quiz-page h2 {
   color: #272030;
   font-size: 1.2em;
   font-family: 'Signika', sans-serif;
 }
-#quiz-page img {
-  width: 90%;
-}
+
 .choice-btn {
   background: #fff;
   width: 100%;

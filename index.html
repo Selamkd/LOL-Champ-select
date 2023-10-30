@@ -4,40 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOL Champ select</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styel2.css" />
     <link rel="icon" type="image/x-icon" href="icons8-league-of-legends.svg" />
   </head>
   <body>
-    <!-- <nav class="nav-logo">
-      <img id="logo" src="Logo.png" alt="LOL logo" />
-    </nav> -->
-    <!--First page-->
-    </body>
-    <div id="main-page">
-      <div class="text">
-        <h1 class="main-h1">Help you find your new main?</h1>
-        <p>Answer a few questions and let us match you to your next champion</p>
-      </div>
+
+  <header>
+
+  </header>
+  <main>
+    <div id="start-page">
       <div class="card">
-        <img class="hero-img" src="card back.png" />
+        <img src="jinx-back.png" alt="Jinx" />
       </div>
       <div class="card-back" hidden>
-       <img src="new2.png">
+        <img src="champion_overview_jinx_og.png" alt="Jinx" />
       </div>
-      <button id="start-button" class="start-button" type="button">
-        Start
-      </button>
-</div>
+
+      <div class="text-container">
+        <text>
+        <h1 class="main-h1">Help you find your new<span> main?</span></h1>
+        <p>Answer a few questions and let us match you to your next champion</p>
+        </text>
+        <button id="start-button" class="start-button" type="button">Start</button>
+      </div>
+   
+    </div>
+  </main>
+
+
+
+
+
+
 
 
  
   
   
 
-    <!--Second page-->
-    <div id="quiz-page" style="display: none">
-      <!-- <img src="yasuo.png" /> -->
-      <div class="quiz-container">
+  <div id="quiz-page" style="display: none">
+    <!-- <img src="yasuo.png" /> -->
+    <div class="quiz-container">
       <h1 class="quiz-h1">Let's find your champion!</h1>
       <h2 id="question">Question goes here</h2>
       <div id="choice-buttons">
@@ -48,8 +56,10 @@
         <button class="choice-btn" type="button">E</button>
       </div>
       <button id="submit-button">Submit</button>
-      </div>
     </div>
+  </div>
+  
+
     <!--Third page -->
     <div id="results-page" style="display: none" ;>
         <!-- Fetch champion's data and display here -->
@@ -67,6 +77,9 @@
       <li id="lore">Lore: </li>
     </ul>
     </div>
+    <footer>
+
+    </footer>
     <script src="main.js"></script>
   </body>
 </html>

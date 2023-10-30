@@ -1,4 +1,4 @@
-const startPage = document.getElementById('main-page');
+const startPage = document.getElementById('start-page');
 const quizPage = document.getElementById('quiz-page');
 const quizForm = document.getElementById('quizForm');
 const resultPage = document.getElementById('results-page');
