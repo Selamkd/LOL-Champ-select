@@ -11,6 +11,9 @@ body {
   font-family: Spiegel; /* Specifies the name you want to use for the font. */
   src: url('/Beaufort/Spiegel-Regular.ttf');
 }
+#results-page {
+  display: flex !important; /* or display: flex, display: inline, etc. depending on your design */
+}
 #start-page {
   width: 100%;
   height: 100vh;
@@ -88,71 +91,79 @@ button:active {
   box-shadow: none;
 }
 #quiz-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   height: 100vh;
-  background: linear-gradient(180deg, #eeeeee 60%, #553285 20%);
+  background: linear-gradient(36deg, #eeeeee 60%, #553285 20%) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-attachment: fixed;
+  background-size: cover;
 }
+
 .quiz-container {
   background: #fff;
-  align-self: center;
+  /* align-self: center !important; */
   border-radius: 10px;
-  padding: 4em;
-  border: 2px solid #414187;
-  width: 70%;
-  align-self: center;
+  padding: 6em 3em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 0px 40px 40px -20px #00000056;
+  width: 30%;
 }
+
 .quiz-h1 {
   border-bottom: 1px solid #333;
   padding-bottom: 1em;
   text-align: center;
-  color: #272030;
-  opacity: 0.5;
-  color: #414187;
-  /* color: rgba(0, 0, 0, 0.5); */
+
+  color: #bba5d7;
+
   font-size: 2em;
-  font-family: 'Luckiest guy';
+  font-family: Beaufort, 'Inter', sans-serif;
 }
 #quiz-page h2 {
-  color: #272030;
-  font-size: 1.2em;
-  font-family: 'Signika', sans-serif;
+  color: #1f1347;
+  font-size: 1.1em;
+  font-family: Spiegel, 'Inter', sans-serif;
+  margin-bottom: 1em;
 }
 
 .choice-btn {
   background: #fff;
   width: 100%;
-  border: 1px solid #222;
+  border: 1px solid #1f1347;
   padding: 0.5em;
   margin: 0.5em 0;
   text-align: left;
   border-radius: 4px;
   cursor: pointer;
   text-align: center;
-  font-family: 'Ubuntu', sans-serif;
-
-  padding-bottom: 0.5em !important;
+  font-family: Spiegel, 'Inter', sans-serif;
 }
 .choice-btn:hover {
   background: #414187;
-  color: #fff;
+  color: #eeeeee;
 }
 #submit-button {
-  display: block;
-  align-self: center;
+  border: 3px solid #553285;
+  border-radius: 40px 40px 40px 40px;
+  padding: 10px 20px 10px 24px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 1.2em;
+  font-weight: 550;
+  width: 180px;
+  font-family: Spiegel, 'Inter', sans-serif;
+  margin-top: 1em;
   margin: 1.25em auto 0;
-  line-height: 40px;
-  width: 10em;
-  padding: 0;
-  border-radius: 175px;
-  background: rgb(112, 204, 124);
-  border: #272030 1px solid;
-  box-shadow: 0 0 5px #84f480, 0 0 5px #84f480 inset;
-  color: #fff;
-  -webkit-perspective: 300px;
-  perspective: 300px;
-  font-family: Gagalin, 'Inter', sans-serif;
-  margin: 1.25em auto 0;
+}
+#submit-button:hover {
+  color: #1f1347;
+  background-color: #e5edf5;
+  box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+  border: none;
 }

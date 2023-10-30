@@ -1,6 +1,6 @@
 const startPage = document.getElementById('start-page');
 const quizPage = document.getElementById('quiz-page');
-const quizForm = document.getElementById('quizForm');
+// const quizForm = document.getElementById('quizForm');
 const resultPage = document.getElementById('results-page');
 const startButton = document.getElementById('start-button');
 const submitButton = document.getElementById('submit-button');
@@ -171,8 +171,6 @@ async function processUserResponse() {
   // Return the champion with the highest score in a variable
   const highScoreChamp = championsScored[0];
   console.log('The closest match is:', highScoreChamp);
-  quizPage.style.display = 'none';
-  resultPage.style.display = 'block';
 
   // img icon for each champion
   const championIcon = {
@@ -212,5 +210,9 @@ async function processUserResponse() {
     console.error('Image not found for the selected champion.');
   }
 }
+submitButton.addEventListener('click', () => {
+  quizPage.style.display = 'none';
+  resultPage.style.display = 'block';
 
-submitButton.addEventListener('click', processUserResponse);
+  processUserResponse();
+});

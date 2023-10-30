@@ -8,78 +8,61 @@
     <link rel="icon" type="image/x-icon" href="icons8-league-of-legends.svg" />
   </head>
   <body>
-
-  <header>
-
-  </header>
-  <main>
-    <div id="start-page">
-      <div class="card">
-        <img src="jinx-back.png" alt="Jinx" />
-      </div>
-      <div class="card-back" hidden>
-        <img src="champion_overview_jinx_og.png" alt="Jinx" />
-      </div>
-
-      <div class="text-container">
-        <text>
-        <h1 class="main-h1">Help you find your new<span> main?</span></h1>
-        <p>Answer a few questions and let us match you to your next champion</p>
-        </text>
-        <button id="start-button" class="start-button" type="button">Start</button>
-      </div>
-   
-    </div>
-  </main>
-
-
-
-
-
-
-
-
- 
-  
-  
-
-  <div id="quiz-page" style="display: none">
-    <!-- <img src="yasuo.png" /> -->
-    <div class="quiz-container">
-      <h1 class="quiz-h1">Let's find your champion!</h1>
-      <h2 id="question">Question goes here</h2>
-      <div id="choice-buttons">
-        <button class="choice-btn" type="button">A</button>
-        <button class="choice-btn" type="button">B</button>
-        <button class="choice-btn" type="button">C</button>
-        <button class="choice-btn" type="button">D</button>
-        <button class="choice-btn" type="button">E</button>
-      </div>
-      <button id="submit-button">Submit</button>
-    </div>
-  </div>
-  
-
-    <!--Third page -->
-    <div id="results-page" style="display: none" ;>
-        <!-- Fetch champion's data and display here -->
-      <h2>Your champion!</h2>
-      <div class = "champion-display">
-        <div id="champion-img">
-        <img id = "champ-img" src="Amumu_render.webp">
+    <header></header>
+    <main id="main-page">
+      <div id="start-page">
+        <div class="card">
+          <img src="jinx-back.png" alt="Jinx" />
         </div>
-        <h2 id="champ-name">Champion name: </h2>
-        <ul class="champ-stats">
-   
-      <li id="abilities">Abilities:</li>
-      <li id="ultimate">Ultimate Ability:</li>
-      <li id="region">Region: </li>
-      <li id="lore">Lore: </li>
-    </ul>
-    </div>
-    <footer>
+        <div class="card-back" hidden>
+          <img src="champion_overview_jinx_og.png" alt="Jinx" />
+        </div>
 
-    </footer>
+        <div class="text-container">
+          <text>
+            <h1 class="main-h1">Help you find your new<span> main?</span></h1>
+            <p>
+              Answer a few questions and let us match you to your next champion
+            </p>
+          </text>
+          <button id="start-button" class="start-button" type="button">
+            Start
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <div id="quiz-page" style="display: none">
+      <div class="quiz-container">
+        <h1 class="quiz-h1">Let's find your champion!</h1>
+        <h2 id="question">Question goes here</h2>
+        <div id="choice-buttons">
+          <button class="choice-btn" type="button">A</button>
+          <button class="choice-btn" type="button">B</button>
+          <button class="choice-btn" type="button">C</button>
+          <button class="choice-btn" type="button">D</button>
+          <button class="choice-btn" type="button">E</button>
+        </div>
+        <button id="submit-button">Submit</button>
+      </div>
+    </div>
+
+    <div id="results-page">
+      <h2>Your champion!</h2>
+      <div class="champion-display">
+        <div id="champion-img">
+          <img id="champ-img" src="" />
+        </div>
+        <h2 id="champ-name">Champion name:</h2>
+        <ul class="champ-stats">
+          <li id="abilities">Abilities:</li>
+          <li id="ultimate">Ultimate Ability:</li>
+          <li id="region">Region:</li>
+          <li id="lore">Lore:</li>
+        </ul>
+      </div>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>
