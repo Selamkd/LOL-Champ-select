@@ -1,7 +1,7 @@
 const startPage = document.getElementById('start-page');
 const quizPage = document.getElementById('quiz-page');
 // const quizForm = document.getElementById('quizForm');
-const resultPage = document.getElementById('results-page');
+const resultPage = document.getElementById('last-page');
 const startButton = document.getElementById('start-button');
 const submitButton = document.getElementById('submit-button');
 const displayQuestion = document.getElementById('question');
@@ -80,7 +80,7 @@ startButton.addEventListener('click', () => {
   startPage.style.display = 'none';
 
   // Show the Quiz Page
-  quizPage.style.display = 'block';
+  quizPage.style.display = 'flex';
   resultPage.style.display = 'none';
   // Call a function to load and display quiz questions
   runQuiz();
@@ -210,9 +210,9 @@ async function processUserResponse() {
     console.error('Image not found for the selected champion.');
   }
 }
+
 submitButton.addEventListener('click', () => {
   quizPage.style.display = 'none';
   resultPage.style.display = 'block';
-
   processUserResponse();
 });
