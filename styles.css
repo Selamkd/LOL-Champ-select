@@ -1,219 +1,238 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Bebas+Neue&family=Luckiest+Guy&family=Orbitron&family=Signika:wght@300;400&family=Ubuntu:wght@300;400&display=swap');
-*,
-  *: : before, *: : after {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   padding: 0;
-  background: url('league-b.webp');
-  background-position: cover;
-  background-repeat: no-repeat;
-  line-height: 1.5;
+  overflow: hidden;
 }
-body img {
+@font-face {
+  font-family: Beaufort; /* Specifies the name you want to use for the font. */
+  src: url('/Beaufort/Beaufort-Bold.ttf');
+}
+@font-face {
+  font-family: Spiegel; /* Specifies the name you want to use for the font. */
+  src: url('/Beaufort/Spiegel-Regular.ttf');
+}
+
+#start-page {
   width: 100%;
+  height: 100vh;
+  background: linear-gradient(0deg, #eeeeee 45%, #553285 3%);
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-gap: 10px;
+  padding: 1em;
+  background-attachment: fixed;
+}
+
+main img {
+  width: 100%;
+  height: auto;
+}
+h1 {
+  color: black;
+  font-family: Beaufort, 'Inter', sans-serif;
+  font-size: 4em;
+  text-transform: uppercase;
+  color: #bba5d7;
+}
+p {
+  font-family: Spiegel, 'Inter', sans-serif;
+  font-size: 1em;
+  color: #bba5d7;
+  text-align: center;
+}
+main span {
+  color: #eeeeee;
 }
 .card {
-  border: 2px solid #d0a85c;
-  background: url('card background.jpeg');
-  background-repeat: no repeat;
-}
-.main-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-  font-family: Gagalin, 'Inter', sans-serif;
-  font-weight: bold;
-  /* -webkit-text-stroke: 2px rgba(50, 205, 50, 0.1); */
-  text-shadow: 2px 2px #272030;
-  text-align: center;
-  margin-top: 0;
-  line-height: 1;
-  color: #f1ebe5;
-  opacity: 0; /* Initially hidden */
-  transform: scale(0.5); /* Initially smaller size */
-  animation: fadeInAndGrow 1s ease-in-out forwards;
-}
-
-p {
-  font-family: 'Ubuntu', sans-serif;
-  color: thistle;
-  opacity: 0.6;
-
-  margin-top: 1em;
-}
-img {
-  border-style: none;
-}
-button {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-  text-align: center;
   display: flex;
   justify-content: center;
-  align-items: center;
-
+  flex-direction: column;
+  height: 100vh;
+}
+.text-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100vh;
+}
+text {
+  width: 80%;
   margin: 0;
 }
-
-#logo {
-  width: 10%;
-}
-nav {
-  display: flex;
-  justify-content: flex-start;
-}
-#main-page {
-  display: flex;
-  flex-direction: column;
-  align-content: space-evenly;
-  gap: 1em;
-
-  padding: 1em;
-}
-@media (min-width: 450px) and (max-width: 890px) {
-  body {
-    background-color: pink;
-  }
-}
-@media (min-width: 900px) {
-  #main-page {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-.hero {
-  grid-area: hero;
-}
-.text {
-  padding: 0.5em;
-  margin-top: 0.5em;
+#span-h1 {
+  color: #eeeeee !important;
 }
 .start-button {
-  line-height: 40px;
-  width: 10em;
-  padding: 0;
-  border-radius: 175px;
-  background: rgb(112, 204, 124);
-  border: #84f480 2px solid;
-  box-shadow: 0 0 5px #84f480, 0 0 5px #84f480 inset;
-  color: #fff;
-  -webkit-perspective: 300px;
-  perspective: 300px;
-  font-family: Gagalin, 'Inter', sans-serif;
-  margin: 1.25em auto 0;
-  animation: wobble 2s ease;
+  font-family: Beaufort, 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  background: #482faf;
+  border: solid 2px #482faf;
+  border-radius: 40px 40px 40px 40px;
+  padding: 16px 24px 16px 28px;
+  transform: translate(0px, 0px) rotate(0deg);
+  transition: 0.2s;
+  box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px #ac73ff;
+  width: 180px;
+  color: #eeeeee;
+  justify-self: center;
+  align-self: center;
+  margin-bottom: 6em;
 }
-.start-button:hover {
-  background: #f4f2ee;
 
-  border: none;
-  color: #272030;
-  box-shadow: 0 0 5px #fff, 0 0 5px #ffff inset;
+.start-button:hover {
+  color: #516d91;
+  background-color: #e5edf5;
+  box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+}
+
+button:active {
+  box-shadow: none;
 }
 #quiz-page {
-  display: flex;
-  flex-direction: column;
-  align-content: space-evenly;
-  gap: 1em;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(36deg, #eeeeee 60%, #553285 20%);
 
-  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .quiz-container {
   background: #fff;
+  /* align-self: center !important; */
   border-radius: 10px;
-  padding: 4em;
-  border: 2px solid rgb(112, 204, 124);
-  margin-top: 5em;
-  width: 60%;
-  margin-left: 0.7em;
+  padding: 6em 3em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 0px 40px 40px -20px #00000056;
+  width: 20%;
 }
 
 .quiz-h1 {
   border-bottom: 1px solid #333;
   padding-bottom: 1em;
   text-align: center;
-  color: #414187;
-  font-size: 2em;
-  font-family: 'Luckiest guy';
-}
 
+  color: #bba5d7;
+
+  font-size: 2em;
+  font-family: Beaufort, 'Inter', sans-serif;
+}
 #quiz-page h2 {
-  color: #272030;
-  font-size: 1.2em;
-  font-family: 'Signika', sans-serif;
+  color: #1f1347;
+  font-size: 1.1em;
+  font-family: Spiegel, 'Inter', sans-serif;
+  margin-bottom: 1em;
 }
 
 .choice-btn {
   background: #fff;
   width: 100%;
-  border: 1px solid #222;
+  border: 1px solid #1f1347;
   padding: 0.5em;
   margin: 0.5em 0;
   text-align: left;
   border-radius: 4px;
   cursor: pointer;
   text-align: center;
-  font-family: 'Ubuntu', sans-serif;
-
-  padding-bottom: 0.5em !important;
+  font-family: Spiegel, 'Inter', sans-serif;
 }
 .choice-btn:hover {
   background: #414187;
-  color: #fff;
+  color: #eeeeee;
 }
 #submit-button {
-  display: block;
-  align-self: center;
+  border: 3px solid #553285;
+  border-radius: 40px 40px 40px 40px;
+  padding: 10px 20px 10px 24px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 1.2em;
+  font-weight: 550;
+  width: 180px;
+  font-family: Spiegel, 'Inter', sans-serif;
+  margin-top: 1em;
   margin: 1.25em auto 0;
-  line-height: 40px;
-  width: 10em;
-  padding: 0;
-  border-radius: 175px;
-  background: rgb(112, 204, 124);
-  border: #272030 1px solid;
-  box-shadow: 0 0 5px #84f480, 0 0 5px #84f480 inset;
-  color: #fff;
-  -webkit-perspective: 300px;
-  perspective: 300px;
-  font-family: Gagalin, 'Inter', sans-serif;
-  margin: 1.25em auto 0;
+}
+#submit-button:hover {
+  color: #1f1347;
+  background-color: #e5edf5;
+  box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+  border: none;
+}
+#last-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(180deg, #eeeeee 90%, #553285 20%);
+}
+.champion-card {
+  width: 27em;
+  transition: 1s ease-in-out;
+  clip-path: polygon(
+    30px 0%,
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0 100%,
+    0% 30px
+  );
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* background: rgba(255, 255, 255, 0.95); */
+  background: rgb(5, 6, 45);
+  /* background: rgba(17, 24, 39, 1); */
+  /* background: #30344c; */
+
+  padding: 4em 2em;
+  /* color: rgba(156, 163, 175, 1); */
+  color: #eeeeee90;
+
+  margin-top: 2.5em;
+}
+.champion-card h2 {
+  margin: auto;
+  padding: 1em;
+  font-family: Beaufort, 'Inter', sans-serif;
+  color: #eeeeee;
+  text-transform: uppercase;
+}
+.champ-stats {
+  line-height: 1.5em;
+  font-family: Spiegel, 'Inter', sans-serif;
+
+  padding-bottom: 0.5em;
 }
 
-@keyframes wobble {
-  0% {
-    transform: translateX(0%);
-  }
-  15% {
-    transform: translateX(-25%) rotate(-5deg);
-  }
-  30% {
-    transform: translateX(20%) rotate(3deg);
-  }
-  45% {
-    transform: translateX(-15%) rotate(-3deg);
-  }
-  60% {
-    transform: translateX(10%) rotate(2deg);
-  }
-  75% {
-    transform: translateX(-5%) rotate(-1deg);
-  }
-  100% {
-    transform: translateX(0%);
-  }
+ul {
+  list-style-type: none;
 }
-@keyframes fadeInAndGrow {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.champion-card img {
+  width: 40%;
+  border-radius: 15px;
+  margin: auto;
+  border: 3px solid #eeeeee;
+  padding: 0.3em;
+}
+#region {
+  margin-bottom: 1em;
+}
+.card-span {
+  font-weight: bolder;
+  color: #e5edf5;
+  font-family: Beaufort, 'Inter', sans-serif;
+  text-transform: uppercase;
 }

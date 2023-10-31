@@ -13,6 +13,7 @@ const champLore = document.getElementById('lore');
 const champImage = document.getElementById('champ-img');
 const heroCard = document.querySelector('.card');
 const cardBack = document.querySelector('.card-back');
+const champCard = document.getElementById('champion-card');
 
 const choiceButtons = document.getElementById('choice-buttons');
 
@@ -21,12 +22,12 @@ setTimeout(() => {
   cardBack.style.display = 'block';
 }, 6000);
 
-// heroCard.addEventListener('mouseover', (event) => {
-//   let xAxis = (window.innerWidth / 2 - event.pageX) / 10;
-//   let yAxis = (window.innerHeight / 2 - event.pageY) / 10;
+champCard.addEventListener('mouseover', (event) => {
+  let xAxis = (window.innerWidth / 2 - event.pageX) / 10;
+  let yAxis = (window.innerHeight / 2 - event.pageY) / 10;
 
-//   heroCard.style.transform = `rotateY(${yAxis}deg) rotateX(${xAxis}deg)`;
-// });
+  champCard.style.transform = `rotateY(${yAxis}deg) rotateX(${xAxis}deg)`;
+});
 
 let currentQuestionIndex = 0;
 let userResponse = [];
@@ -165,12 +166,12 @@ async function processUserResponse() {
   });
   console.log(championsScored);
 
-  // Sort champions by their score in descending order
+  // Sort champions by their score
   championsScored.sort((a, b) => b.score - a.score);
 
   // Return the champion with the highest score in a variable
   const highScoreChamp = championsScored[0];
-  console.log('The closest match is:', highScoreChamp);
+  console.log(highScoreChamp);
 
   // img icon for each champion
   const championIcon = {
@@ -189,6 +190,7 @@ async function processUserResponse() {
     'Nami': '/Champ-icons/nami.png',
     'Nasus': '/Champ-icons/nasus.png',
     'Olad': '/Champ-icons/olaf.png',
+    'Ornn': '/Champ-icons/ornn.png',
     'Orianna': '/Champ-icons/orianna.jpeg',
     'Pantheon': '/Champ-icons/pantheon.png',
     'Pyke': '/Champ-icons/pyke.webp',
@@ -196,6 +198,7 @@ async function processUserResponse() {
     'Rell': '/Champ-icons/rell.jpeg',
     'Rakan': '/Champ-icons/rakan.jpeg',
     'Shyvana': '/Champ-icons/shyvana.webp',
+    'Samira': '/Champ-icons/samira.jpeg',
     'Sylas': '/Champ-icons/sylas.webp',
     'Teemo': '/Champ-icons/Teemo.jpeg',
     'Vayne': '/Champ-icons/vayne.webp',
@@ -209,10 +212,17 @@ async function processUserResponse() {
   } else {
     console.error('Image not found for the selected champion.');
   }
+  champName.textContent = highScoreChamp.champion.championName;
+  champAbilities.innerHTML = `<span class="card-span">Abilities: </span> ${highScoreChamp.champion.abilities.join(
+    ', '
+  )}`;
+  champUltimate.innerHTML = `<span class="card-span">Ultimate Ability: </span> ${highScoreChamp.champion.ulitimateAbility}`;
+  champRegion.innerHTML = `<span class="card-span">Region: </span> ${highScoreChamp.champion.region}`;
+  champLore.innerHTML = `<span class="card-span">Lore: </span> ${highScoreChamp.champion.lore}`;
 }
 
 submitButton.addEventListener('click', () => {
   quizPage.style.display = 'none';
-  resultPage.style.display = 'block';
+  resultPage.style.display = 'flex';
   processUserResponse();
 });
