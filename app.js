@@ -1,7 +1,6 @@
 //Import express, nodemon, fs and UUID
 import express from 'express';
 import nodemon from 'nodemon';
-import morgan from 'morgan';
 import { v4 as uuidv4 } from 'uuid';
 import { config as configDotenv } from 'dotenv';
 import cors from 'cors';
@@ -26,7 +25,7 @@ import {
 
 //Set up modules for use
 app.use(express.json());
-app.use(morgan('dev'));
+
 //app.use(cors('dev')) *add back in if we add frontend*
 app.use(
   cors({
