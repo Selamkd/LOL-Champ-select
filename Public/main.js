@@ -132,7 +132,7 @@ function choiceSelected(event) {
 
 async function processUserResponse() {
   // Fetch champion data from the first API
-  const response = await fetch('http://localhost:4000/champions/');
+  const response = await fetch('https://champ-select.onrender.com/champions');
   if (!response.ok) {
     console.error(`Status: ${response.status}`);
     console.error(`Text: ${await response.text()}`);
