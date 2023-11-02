@@ -15,6 +15,8 @@ const app = express();
 
 app.use(express.static('public'));
 
+console.log('Static files are being served from the "public" directory.');
+
 // bring in CRUD functions from crudchamps.js
 import {
   getChampions,
