@@ -37,9 +37,8 @@ app.listen(PORT, function () {
   console.log(`Sever is now listening on http://localhost:${PORT}`);
 });
 
-//redirect to /champions /
 app.get('/', function (req, res) {
-  res.redirect('/champions');
+  res.sendFile(__dirname + '/public/index.html');
 });
 // get all champions
 app.get('/champions', async function (req, res) {
