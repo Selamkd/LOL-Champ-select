@@ -3,6 +3,7 @@ import express from 'express';
 import nodemon from 'nodemon';
 import { v4 as uuidv4 } from 'uuid';
 import { config as configDotenv } from 'dotenv';
+import { dirname } from 'path';
 import cors from 'cors';
 import path from 'path';
 
@@ -12,7 +13,7 @@ configDotenv();
 //set port number
 const PORT = process.env.PORT || 4000;
 const app = express();
-
+const __dirname = path.resolve();
 app.use(express.static(__dirname + '/public'));
 
 console.log('Static files are being served from the "public" directory.');
