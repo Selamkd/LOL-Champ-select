@@ -4,6 +4,7 @@ import nodemon from 'nodemon';
 import { v4 as uuidv4 } from 'uuid';
 import { config as configDotenv } from 'dotenv';
 import cors from 'cors';
+import path from 'path';
 
 configDotenv();
 //deploying to heruku
@@ -38,7 +39,8 @@ app.listen(PORT, function () {
 });
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/public/index.html');
+  const indexPath = path.join(__dirname, 'public', 'index.html'); // Define __dirname explicitly
+  res.sendFile(indexPath);
 });
 // get all champions
 app.get('/champions', async function (req, res) {
