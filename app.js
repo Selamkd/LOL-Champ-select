@@ -38,10 +38,6 @@ app.listen(PORT, function () {
   console.log(`Sever is now listening on http://localhost:${PORT}`);
 });
 
-app.get('/', function (req, res) {
-  const indexPath = path.join(__dirname, 'public', 'index.html'); // Define __dirname explicitly
-  res.sendFile(indexPath);
-});
 // get all champions
 app.get('/champions', async function (req, res) {
   const champions = await getChampions();
