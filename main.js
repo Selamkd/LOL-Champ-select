@@ -14,7 +14,6 @@ const champImage = document.getElementById('champ-img');
 const heroCard = document.querySelector('.card');
 const cardBack = document.querySelector('.card-back');
 const champCard = document.getElementById('champion-card');
-
 const choiceButtons = document.getElementById('choice-buttons');
 
 setTimeout(() => {
