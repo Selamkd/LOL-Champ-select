@@ -12,7 +12,7 @@ configDotenv();
 //set port number
 const PORT = process.env.PORT || 4000;
 const app = express();
-app.use(express.static('Public'));
+app.use(express.static('public'));
 
 // bring in CRUD functions from crudchamps.js
 import {
