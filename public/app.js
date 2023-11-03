@@ -17,8 +17,10 @@ const champCard = document.getElementById('champion-card');
 const choiceButtons = document.getElementById('choice-buttons');
 
 setTimeout(() => {
-  heroCard.style.display = 'none';
-  cardBack.style.display = 'block';
+  if (window.innerWidth > 700) {
+    heroCard.style.display = 'none';
+    cardBack.style.display = 'block';
+  }
 }, 6000);
 
 champCard.addEventListener('mouseover', (event) => {

@@ -22,25 +22,28 @@ body {
   padding: 1em;
   background-attachment: fixed;
 }
-@media (max-width: 767px) {
+@media (max-width: 500px) {
   #start-page {
-    background: linear-gradient(180deg, #eeeeee 45%, #553285 5%);
+    background: linear-gradient(79deg, #eeeeee 50%, #553285 50%);
     display: flex;
     flex-direction: column;
     align-content: center;
     height: 100vh;
-    justify-content: flex-start;
+    justify-content: center;
     background-size: cover;
     margin: 0;
     padding: 0;
     overflow: hidden;
   }
+  .text-container {
+    margin-top: 2em;
+  }
   #start-page h1 {
     font-size: 1.9em;
     margin-left: 0.5em;
-    color: #e5edf5;
+    color: #1f1347;
     margin-right: 0;
-    margin-top: 2em;
+    margin-bottom: 2.5em;
   }
   #span-h1 {
     background-color: puple;
@@ -51,16 +54,44 @@ body {
     margin-left: 0.5em;
   }
   main span {
-    color: #1f1347 !important;
+    color: #bba5d7 !important;
   }
   #start-button {
     background-color: #bba5d7;
     border: none;
     box-shadow: none;
     color: #e5edf5;
+    margin-bottom: 19em;
+  }
+  .card img {
+    width: 90%;
+  }
+} /*
+@media (max-width: 500px) {
+  #start-page {
+     background: linear-gradient(180deg, #eeeeee 40%, #553285 0%); 
+    border: 1px solid green;
+   background-size: cover; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .card {
+    grid-area: card;
+  }
+  .text-container {
+    grid-area: text-container;
+  }
+  #start-button {
+    grid-area: start-button;
+    margin-top: 0;
+    background-color: pink;
+  }
+  #start-page img {
+    width: 90%;
   }
 }
-
+*/
 main img {
   width: 100%;
   height: auto;
