@@ -131,8 +131,6 @@ function choiceSelected(event) {
     runQuiz();
   } else {
     submitButton.disabled = false;
-    // quizPage.style.display = 'none';
-    // resultPage.style.display = 'block';
   }
   console.log(userResponse);
 }
