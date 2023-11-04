@@ -17,11 +17,11 @@ const champCard = document.getElementById('champion-card');
 const choiceButtons = document.getElementById('choice-buttons');
 
 setTimeout(() => {
-  if (window.innerWidth > 700) {
-    heroCard.style.display = 'none';
-    cardBack.style.display = 'block';
-  }
-}, 6000);
+  // if (window.innerWidth > 700) {
+  heroCard.style.display = 'none';
+  cardBack.style.display = 'block';
+  // }
+}, 5000);
 
 champCard.addEventListener('mouseover', (event) => {
   let xAxis = (window.innerWidth / 2 - event.pageX) / 10;
@@ -165,7 +165,8 @@ async function processUserResponse() {
       score: calculateSimilarity(champ, userResponse),
     };
   });
-  console.log(championsScored);
+
+  console.log(typeof championsScored);
 
   // Sort champions by their score
   championsScored.sort((a, b) => b.score - a.score);
