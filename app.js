@@ -49,7 +49,7 @@ app.get('/champions', async function (req, res) {
     status: 'success',
     data: champions,
   };
-  return res.status(200).json(champions);
+  return res.status(200).json(response);
 });
 
 // get a specific champion by it's id
@@ -113,3 +113,4 @@ app.delete('/champions/:id', async function (req, res) {
     });
   }
 });
+export default app;
