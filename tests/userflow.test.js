@@ -47,7 +47,7 @@ test('Locate the page', async ({ page }) => {
   await expect(championName).toBeVisible();
 
   const championImg = page.getByRole('img');
-  await expect(championName).toBeVisible();
+  await expect(championImg).toBeVisible();
   await page.reload();
   await page.close();
 });

@@ -136,7 +136,7 @@ function choiceSelected(event) {
 }
 
 async function processUserResponse() {
-  // Fetch champion data from the first API
+  // Fetch champion data from  API
   const response = await fetch('https://champ-select.onrender.com/champions');
   if (!response.ok) {
     console.error(`Status: ${response.status}`);
@@ -146,7 +146,8 @@ async function processUserResponse() {
   }
 
   const champData = await response.json();
-  console.log(champData);
+  const champArray = champData.data;
+  console.log(champArray);
 
   // Write a function to calculate the similarity score between a champion's values and user's response
   function calculateSimilarity(champ, userResponse) {
@@ -162,14 +163,12 @@ async function processUserResponse() {
   }
 
   // Calculate the score for each champion
-  const championsScored = champData.map((champ) => {
+  const championsScored = champArray.map((champ) => {
     return {
       champion: champ,
       score: calculateSimilarity(champ, userResponse),
     };
   });
-
-  console.log(typeof championsScored);
 
   // Sort champions by their score
   championsScored.sort((a, b) => b.score - a.score);

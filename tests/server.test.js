@@ -22,6 +22,11 @@ test('GET/champions', async () => {
   expect(response.body.data[0]).toEqual(payload);
   expect(response.status).toEqual(200);
 
+  expect(response.body).toBeTypeOf('object');
+  console.log(response.body);
+
+  expect(response.body.status).toBe('success');
+
   const header = response.headers['content-type'];
   expect(header).toContain('application/json');
 });
