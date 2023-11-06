@@ -180,12 +180,12 @@ button:active {
 #last-page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
   overflow: hidden;
   background-attachment: fixed;
-  background: linear-gradient(180deg, #eeeeee 95%, #1f1347 20%);
+  background: linear-gradient(20deg, #eeeeee 60%, #553285 20%);
 }
 .champion-card {
   width: 27em;
@@ -203,22 +203,23 @@ button:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background: rgba(255, 255, 255, 0.95); */
+
   background: rgb(5, 6, 45);
+
   /* background: rgba(17, 24, 39, 1); */
   /* background: #30344c; */
 
-  padding: 4em 2em;
+  padding: 4em 3em;
   /* color: rgba(156, 163, 175, 1); */
   color: #eeeeee90;
-
-  margin-top: 2.5em;
+  margin-top: 1em;
+  height: 75%;
 }
 .champion-card h2 {
   margin: auto;
   padding: 1em;
   font-family: Beaufort, 'Inter', sans-serif;
-  color: #eeeeee;
+  color: #e5edf5;
   text-transform: uppercase;
 }
 .champ-stats {
@@ -243,7 +244,7 @@ ul {
 }
 .card-span {
   font-weight: bolder;
-  color: #e5edf5;
+  color: #eeeeee;
   font-family: Beaufort, 'Inter', sans-serif;
   text-transform: uppercase;
 }
